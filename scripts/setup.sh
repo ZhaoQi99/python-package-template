@@ -52,12 +52,14 @@ else
     sed_opt=("-i")
 fi
 
-sed "${sed_opt[@]}" "s/<package-name>/$name/g" setup.cfg
-sed "${sed_opt[@]}" "s/<package-path>/$path/g" setup.cfg
-sed "${sed_opt[@]}" "s/<github-username>/$github_username/g" setup.cfg
-sed "${sed_opt[@]}" "s/<author>/$author/g" setup.cfg
-sed "${sed_opt[@]}" "s/<email>/$email/g" setup.cfg
-sed "${sed_opt[@]}" "s/<description>/$description/g" setup.cfg
-sed "${sed_opt[@]}" "s/<keywords>/$keywords/g" setup.cfg
+sed "${sed_opt[@]}" "s/<package-name>/$name/g" setup.cfg README_TEMPLATE.md
+sed "${sed_opt[@]}" "s/<package-path>/$path/g" setup.cfg README_TEMPLATE.md
+sed "${sed_opt[@]}" "s/<github-username>/$github_username/g" setup.cfg README_TEMPLATE.md
+sed "${sed_opt[@]}" "s/<author>/$author/g" setup.cfg README_TEMPLATE.md
+sed "${sed_opt[@]}" "s/<email>/$email/g" setup.cfg README_TEMPLATE.md
+sed "${sed_opt[@]}" "s/<description>/$description/g" setup.cfg README_TEMPLATE.md
+sed "${sed_opt[@]}" "s/<keywords>/$keywords/g" setup.cfg README_TEMPLATE.md
 
+mv README.md README_DELETE_ME.md
+mv README_TEMPLATE.md README.md
 echo -e "\033[32mDone.\033[0m Please remember to modify \033[31m'install_requires'\033[0m in \033[31m'setup.cfg'\033[0m."
