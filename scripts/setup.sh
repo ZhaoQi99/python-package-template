@@ -16,10 +16,10 @@ description=${description:-$def_description}
 read -p "Enter package keywords (comma separated) [$def_keywords]: " keywords
 keywords=${keywords:-$def_keywords}
 
-read -p "Enter author name [$author]: " author
-author=${author:-$def_author}
-read -p "Enter author email [$def_email]: " email
-email=${email:-$def_email}
+read -p "Enter author name [${def_author:-$(git config --get user.name)}]: " author
+author=${author:-${def_author:-$(git config --get user.name)}}
+read -p "Enter author email [${def_email:-$(git config --get user.email)}]: " email
+email=${email:-${def_email:-$(git config --get user.email)}}
 
 read -p "Enter github username [${def_github_username:-$author}]: " github_username
 github_username=${github_username:-${def_github_username:-$author}}
