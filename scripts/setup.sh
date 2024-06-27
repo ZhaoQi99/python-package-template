@@ -60,6 +60,9 @@ sed "${sed_opt[@]}" "s/<email>/$email/g" setup.cfg README_TEMPLATE.md
 sed "${sed_opt[@]}" "s/<description>/$description/g" setup.cfg README_TEMPLATE.md
 sed "${sed_opt[@]}" "s/<keywords>/$keywords/g" setup.cfg README_TEMPLATE.md
 
+title=$(echo $name| sed 's/-/\n/g' | awk '{print toupper(substr($0,1,1)) substr($0,2)}' | tr '\n' ' ')
+sed "${sed_opt[@]}" "s/<Package-Name>/$title/g" README_TEMPLATE.md
+
 mv README.md README_DELETE_ME.md
 mv README_TEMPLATE.md README.md
 echo -e "\033[32mDone.\033[0m Please remember to modify \033[31m'install_requires'\033[0m in \033[31m'setup.cfg'\033[0m."

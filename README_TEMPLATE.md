@@ -1,4 +1,4 @@
-# Django Celery Beat Endpoint
+# <Package-Name>
 [![Python version](https://img.shields.io/pypi/pyversions/<package-name>.svg?logo=python)](https://pypi.python.org/pypi/<package-name>)
 [![PyPI package](https://img.shields.io/pypi/v/<package-name>.svg)](https://pypi.python.org/pypi/<package-name>)
 [![PyPI download](https://img.shields.io/pypi/dm/<package-name>.svg)](https://pypi.python.org/pypi/<package-name>)
